@@ -1,0 +1,7 @@
+flask
+flask-session
+passlib
+sqlalchemy
+sqlparse
+# mysql-python
+cx-Oracle

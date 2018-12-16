@@ -1,0 +1,24 @@
+users (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    first_name VARCHAR(15) NOT NULL,
+    last_name VARCHAR(15) NOT NULL,
+    email VARCHAR(60) NOT NULL,
+    password TEXT NOT NULL,
+    registered_on DATETIME NOT NULL
+);
+
+cities (
+    city_id INT PRIMARY KEY AUTO_INCREMENT,
+    name TEXT NOT NULL,
+    longitude INT NOT NULL,
+    latitude INT NOT NULL,
+    has_airport BOOL NOT NULL
+);
+
+neighbours (
+    city_id INT NOT NULL,
+    neighbour_id INT NOT NULL,
+    distance INT NOT NULL,
+    FOREIGN KEY city_id REFERENCES cities.city_id,
+    FOREIGN KEY neighbour_id REFERENCES cities.city_id
+);
