@@ -61,6 +61,7 @@ nav > ul > li > a:hover {
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     padding: 20px;
+    width: 45%;
 }
 
 footer {
