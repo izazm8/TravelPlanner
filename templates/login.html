@@ -3,5 +3,24 @@
 {% block title %}Login | TravelPlanner{% endblock %}
 
 {% block content %}
-<h2>Login</h2>
+<div class="sform-container" style="background-image: url({{ url_for('static', filename='images/bg-login.jpg') }});">
+    <form>
+        <div  align="center">
+            <h1 style="color: white">Login</h1>
+            <p style="color: white">Please enter your e-mail and password to login.</p><br>
+
+            <p><label for="email" style="color: white">Email</label>
+            <input type="text" placeholder="abc@email.com" name="email" required></p>
+
+            <p><label for="psw" style="color: white">Password</label>
+            <input type="password" placeholder="Password" name="psw" pattern=".{8,}" required title="8 characters minimum"></p>
+
+            <p><label style="color: white">
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label></p><br>
+
+            <button type="submit" name="signupbtn">Login</button>
+        </div>
+    </form>
+</div>
 {% endblock %}

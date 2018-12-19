@@ -36,12 +36,26 @@ def signup():
 
 @app.route('/login', methods=['GET'])
 def login():
+    session['user_id'] = 'test'
     return render_template("login.html")
+
+@app.route('/logout', methods=['GET'])
+def logout():
+    session.clear()
+    return redirect('/')
 
 @app.route('/dashboard', methods=['GET'])
 @login_required
 def dashboard():
     return render_template("dashboard.html")
+
+@app.route('/contact', methods=['GET'])
+def contact_us():
+    return render_template("contact-us.html")
+
+@app.route('/about', methods=['GET'])
+def about_us():
+    return render_template("about-us.html")
 
 @app.route('/test')
 def test():
