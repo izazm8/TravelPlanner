@@ -3,5 +3,22 @@
 {% block title %}Dashboard | TravelPlanner{% endblock %}
 
 {% block content %}
-main selection of destinations happens here.
+<div class="container">
+    <form>
+        <label>List of cities</label>
+        <select>
+            <option>Lahore</option>
+            <option>Islamabad</option>
+            <option>Karachi</option>
+        </select>
+    </form>
+
+    List of selected destinations:
+    <ul>
+        <li>destination 1</li>
+        <li>destination 2</li>
+    </ul>
+
+    <button class="ghost-btn">Book Now!</button>
+</div>
 {% endblock %}

@@ -15,6 +15,20 @@ a {
     color: #ffffff;
 }
 
+.container {
+    padding: 20px 40px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.ghost-btn {
+    background-color: white;
+    padding: 15px;
+    border: 2px solid black;
+}
+
 nav {
     padding: 0 10px;
 }
