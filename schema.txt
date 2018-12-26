@@ -1,24 +1,47 @@
-users (
-    user_id INT PRIMARY KEY AUTO_INCREMENT,
-    first_name VARCHAR(15) NOT NULL,
-    last_name VARCHAR(15) NOT NULL,
-    email VARCHAR(60) NOT NULL,
-    password TEXT NOT NULL,
-    registered_on DATETIME NOT NULL
+CREATE TABLE Users (
+    user_id            INT PRIMARY KEY,
+    user_first_name    VARCHAR(15) NOT NULL,
+    user_last_name     VARCHAR(15) NOT NULL,
+    user_email         VARCHAR(60) NOT NULL,
+    user_password      VARCHAR(512) NOT NULL,
+    user_registered_on DATE NOT NULL
 );
 
-cities (
-    city_id INT PRIMARY KEY AUTO_INCREMENT,
-    name TEXT NOT NULL,
-    longitude INT NOT NULL,
-    latitude INT NOT NULL,
-    has_airport BOOL NOT NULL
+CREATE TABLE Places (
+    place_id    INT PRIMARY KEY,
+    place_name  VARCHAR(512) NOT NULL,
+    longitude   INT NOT NULL,
+    latitude    INT NOT NULL
 );
 
-neighbours (
-    city_id INT NOT NULL,
-    neighbour_id INT NOT NULL,
-    distance INT NOT NULL,
-    FOREIGN KEY city_id REFERENCES cities.city_id,
-    FOREIGN KEY neighbour_id REFERENCES cities.city_id
+CREATE TABLE Neighbours (
+    place_id           INT REFERENCES Places(place_id),
+    neighbour_id       INT REFERENCES Places(place_id),
+    neighbour_distance INT NOT NULL,
+    neighbour_cost     INT NOT NULL,
+    neighbour_time     INT NOT NULL,
+    CONSTRAINT PK_Neighbours PRIMARY KEY (place_id, neighbour_id)
+);
+
+CREATE TABLE Packages (
+    package_id     INT PRIMARY KEY,
+    package_name   VARCHAR(50) NOT NULL,
+    package_factor INT NOT NULL
+);
+
+CREATE TABLE Bookings (
+    booking_id             INT PRIMARY KEY,
+    user_id                INT REFERENCES Users(user_id),
+    package_id             INT REFERENCES Packages(package_id),
+    booking_date           DATE NOT NULL,
+    booking_total_people   INT NOT NULL,
+    booking_total_charges  INT NOT NULL,
+    booking_total_duration INT NOT NULL
+);
+
+CREATE TABLE Booking_destinations (
+    booking_id INT REFERENCES Bookings(booking_id),
+    place_id   INT REFERENCES Places(place_id),
+    bd_stay_duration INT NOT NULL,
+    CONSTRAINT PK_Booking_destinations PRIMARY KEY (booking_id, place_id)
 );
