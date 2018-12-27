@@ -7,9 +7,9 @@
     <form>
         <label>List of cities</label>
         <select>
-            <option>Lahore</option>
-            <option>Islamabad</option>
-            <option>Karachi</option>
+            {% for place in places %}
+            <option>{{ place.place_name }}</option>
+            {% endfor %}
         </select>
     </form>
 

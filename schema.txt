@@ -10,14 +10,14 @@ CREATE TABLE Users (
 CREATE TABLE Places (
     place_id    INT PRIMARY KEY,
     place_name  VARCHAR(512) NOT NULL,
-    longitude   INT NOT NULL,
-    latitude    INT NOT NULL
+    longitude   NUMBER(9, 6),
+    latitude    NUMBER(9, 6)
 );
 
 CREATE TABLE Neighbours (
     place_id           INT REFERENCES Places(place_id),
     neighbour_id       INT REFERENCES Places(place_id),
-    neighbour_distance INT NOT NULL,
+    neighbour_distance NUMBER(6, 2) NOT NULL,
     neighbour_cost     INT NOT NULL,
     neighbour_time     INT NOT NULL,
     CONSTRAINT PK_Neighbours PRIMARY KEY (place_id, neighbour_id)
@@ -40,8 +40,8 @@ CREATE TABLE Bookings (
 );
 
 CREATE TABLE Booking_destinations (
-    booking_id INT REFERENCES Bookings(booking_id),
-    place_id   INT REFERENCES Places(place_id),
+    booking_id       INT REFERENCES Bookings(booking_id),
+    place_id         INT REFERENCES Places(place_id),
     bd_stay_duration INT NOT NULL,
     CONSTRAINT PK_Booking_destinations PRIMARY KEY (booking_id, place_id)
 );

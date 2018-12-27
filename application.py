@@ -47,7 +47,8 @@ def logout():
 @app.route('/dashboard', methods=['GET'])
 @login_required
 def dashboard():
-    return render_template("dashboard.html")
+    places_list = db.execute('SELECT * FROM Places')
+    return render_template("dashboard.html", places = places_list)
 
 @app.route('/contact', methods=['GET'])
 def contact_us():
