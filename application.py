@@ -36,7 +36,7 @@ def signup():
 
 @app.route('/login', methods=['GET'])
 def login():
-    session['user_id'] = 'test'
+    session['user_id'] = '1'
     return render_template("login.html")
 
 @app.route('/logout', methods=['GET'])
@@ -48,8 +48,15 @@ def logout():
 @login_required
 def dashboard():
     places_list = db.execute('SELECT * FROM Places')
-    return render_template("dashboard.html", places = places_list)
+    places_list = sorted(places_list, key=lambda k : k['place_name'])
 
+    packages_list = db.execute('SELECT * FROM Packages')
+
+    return render_template("dashboard.html", places=places_list, packages=packages_list)
+
+@app.route('/booking', methods=['POST'])
+def booking():
+    return str(request.form)
 @app.route('/contact', methods=['GET'])
 def contact_us():
     return render_template("contact-us.html")

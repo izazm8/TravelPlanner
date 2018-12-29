@@ -32,6 +32,9 @@
     {% block content %}{% endblock %}
 
     <footer class="bg-dark">
+        <script src="{{ url_for('static', filename='js/jquery-2.2.4.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
         {% block footer %}{% endblock %}
 
         &copy; Copyright, 2018. All rights reserved.

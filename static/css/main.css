@@ -7,6 +7,16 @@ a {
     text-decoration: none;
 }
 
+input, textarea {
+    padding: 5px;
+    border: 2px solid #c5c5c5;
+    border-bottom: 2px solid #000000;
+    transition: 0.5s;
+}
+input:focus {
+    border: 2px solid #000000;
+}
+
 .bg-dark {
     background-color: #333333;
     color: #cccccc;
@@ -24,9 +34,26 @@ a {
 }
 
 .ghost-btn {
-    background-color: white;
-    padding: 15px;
+    background-color: #ffffff;
+    padding: 10px 15px;
     border: 2px solid black;
+    font-size: 16px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.ghost-btn:hover {
+    color: #ffffff;
+    background-color: #333333;
+}
+
+.col-5 {
+    display: inline-block;
+    width: 50%;
+    float: left;
+}
+
+.mg-top-10 {
+    margin-top: 10px;
 }
 
 nav {
@@ -117,15 +144,14 @@ label + input {
 input + input {
     float: right;
 }
-input, textarea {
+.sform-container input, .sform-container textarea {
     font: 1em sans-serif;
     width: 200px;
     box-sizing: border-box;
     border: 1px solid #999;
     border-radius: 5px;
-    padding: 5px;
 }
-input[type=checkbox], input[type=radio] {
+.sform-container input[type=checkbox], .sform-container input[type=radio] {
     margin-left: -8.5em;
     width: auto;
     border: none;

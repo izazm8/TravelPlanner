@@ -26,7 +26,7 @@ CREATE TABLE Neighbours (
 CREATE TABLE Packages (
     package_id     INT PRIMARY KEY,
     package_name   VARCHAR(50) NOT NULL,
-    package_factor INT NOT NULL
+    package_factor NUMBER(4,2) NOT NULL
 );
 
 CREATE TABLE Bookings (
