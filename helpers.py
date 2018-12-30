@@ -38,3 +38,8 @@ def get_path_cost(path):
 def get_path_travel_time(path):
     # TODO: Using neighbours table, calculate total travel time
     return 0
+
+def get_last_id(db_conn, col_name, table_name):
+    x = db_conn.execute('SELECT MAX({}) as last_insert_id FROM {}'.format(col_name, table_name))[0]['last_insert_id']
+    last_booking_id = 0 if x is None else x
+    return last_booking_id

@@ -3,6 +3,7 @@ CREATE TABLE Users (
     user_first_name    VARCHAR(15) NOT NULL,
     user_last_name     VARCHAR(15) NOT NULL,
     user_email         VARCHAR(60) NOT NULL,
+    user_phone         VARCHAR(15),
     user_password      VARCHAR(512) NOT NULL,
     user_registered_on DATE NOT NULL
 );

@@ -2,6 +2,7 @@ from flask import Flask, flash, redirect, request, render_template, session, url
 from flask_session import Session
 from tempfile import mkdtemp
 from datetime import date
+from passlib.hash import bcrypt
 
 from cs50 import SQL
 from helpers import *
@@ -34,7 +35,30 @@ def index():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
-        # TODO: Implement signup
+        first_name = request.form['firstname']
+        last_name = request.form['lastname']
+        email = request.form['email']
+        phone = request.form['phone']
+        passwd = request.form['password']
+        hashed_passwd = bcrypt.hash(passwd) # password encrypted using bcrypt
+        confirm_passwd = request.form['confirm-password']
+
+        if passwd != confirm_passwd:
+            return redirect(url_for('signup'))
+
+        last_user_id = get_last_id(db, 'user_id', 'Users')
+        user_id = last_user_id + 1
+
+        db.execute('INSERT INTO Users (user_id, user_first_name, user_last_name,'
+                   'user_email, user_phone, user_password, user_registered_on)'
+                   'VALUES ({}, \'{}\', \'{}\', \'{}\', \'{}\', \'{}\', TO_DATE(\'{}\', \'yyyy-mm-dd\'))'
+                   .format(user_id, first_name, last_name, email, phone, hashed_passwd, date.today()))
+
+        session['user_id'] = user_id
+        session['first_name'] = first_name
+        session['last_name'] = last_name
+        session['email'] = email
+
         return redirect(url_for('dashboard'))
     elif request.method == 'GET':
         return render_template("signup.html")
@@ -89,9 +113,8 @@ def booking():
     total_duration = travel_time + total_stay_duration
 
     # 3. store booking data in Bookings table
-    x = db.execute('SELECT MAX(booking_id) as last_insert_id FROM Bookings')[0]['last_insert_id']
-    last_booking_id = 0 if x is None else x
-    booking_id = last_booking_id + 1
+    last_id = get_last_id(db, 'booking_id', 'Bookings')
+    booking_id = last_id + 1
 
     db.execute('INSERT INTO Bookings (booking_id, user_id, package_id, booking_date, booking_total_people, '
                'booking_total_charges, booking_total_duration) '

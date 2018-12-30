@@ -6,9 +6,9 @@
     </root>
     <schema id="2" parent="1" name="TRAVEL_PLANNER">
       <ObjectId>48</ObjectId>
-      <IntrospectionTimestamp>2018-12-30.16:27:14</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-12-31.02:15:54</IntrospectionTimestamp>
       <CreatedTimestamp>2018-12-16.18:19:42</CreatedTimestamp>
-      <ModifiedTimestamp>2018-12-29.05:53:48</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-12-31.02:13:43</ModifiedTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -222,7 +222,7 @@
     <table id="44" parent="2" name="USERS">
       <ObjectId>20321</ObjectId>
       <CreatedTimestamp>2018-12-27.00:03:10</CreatedTimestamp>
-      <ModifiedTimestamp>2018-12-27.00:03:10</ModifiedTimestamp>
+      <ModifiedTimestamp>2018-12-31.02:13:43</ModifiedTimestamp>
       <TemporaryPreserve>1</TemporaryPreserve>
     </table>
     <routine id="45" parent="2" name="CUSTOM_AUTH">
@@ -2630,7 +2630,11 @@ NEIGHBOUR_ID</ColNames>
       <DataType>DATE|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="533" parent="44" name="SYS_C007146">
+    <column id="533" parent="44" name="USER_PHONE">
+      <Position>7</Position>
+      <DataType>VARCHAR2(15 byte)|0s</DataType>
+    </column>
+    <index id="534" parent="44" name="SYS_C007146">
       <ObjectId>20322</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <CreatedTimestamp>2018-12-27.00:03:10</CreatedTimestamp>
@@ -2639,7 +2643,7 @@ NEIGHBOUR_ID</ColNames>
       <ColNames>USER_ID</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="534" parent="44" name="SYS_C007146">
+    <key id="535" parent="44" name="SYS_C007146">
       <NameSurrogate>1</NameSurrogate>
       <ModifiedTimestamp>2018-12-27.00:03:10</ModifiedTimestamp>
       <ColNames>USER_ID</ColNames>
@@ -2647,27 +2651,27 @@ NEIGHBOUR_ID</ColNames>
       <UnderlyingIndexName>SYS_C007146</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <argument id="535" parent="45">
+    <argument id="536" parent="45">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>PL/SQL BOOLEAN|0s</DataType>
     </argument>
-    <argument id="536" parent="45" name="P_USERNAME">
+    <argument id="537" parent="45" name="P_USERNAME">
       <Position>1</Position>
       <DataType>VARCHAR2|0s</DataType>
     </argument>
-    <argument id="537" parent="45" name="P_PASSWORD">
+    <argument id="538" parent="45" name="P_PASSWORD">
       <Position>2</Position>
       <DataType>VARCHAR2|0s</DataType>
     </argument>
-    <argument id="538" parent="46">
+    <argument id="539" parent="46">
       <ArgumentDirection>R</ArgumentDirection>
       <DataType>VARCHAR2|0s</DataType>
     </argument>
-    <argument id="539" parent="46" name="P_USERNAME">
+    <argument id="540" parent="46" name="P_USERNAME">
       <Position>1</Position>
       <DataType>VARCHAR2|0s</DataType>
     </argument>
-    <argument id="540" parent="46" name="P_PASSWORD">
+    <argument id="541" parent="46" name="P_PASSWORD">
       <Position>2</Position>
       <DataType>VARCHAR2|0s</DataType>
     </argument>
