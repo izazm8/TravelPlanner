@@ -8,9 +8,17 @@
     <div class="col-5">
         <h3>Selected destinations:</h3>
 
-        <ul class="selected-destinations">
+        <table>
+            <thead>
+                <tr>
+                    <th width="50%">Place</th>
+                    <th width="50%">Stay (days)</th>
+                </tr>
+            </thead>
+            <tbody class="selected-destinations">
 
-        </ul>
+            </tbody>
+        </table>
 
         <h3>Total cost: <span>$$$</span></h3>
     </div>
@@ -41,11 +49,13 @@
 
                 <h3>3. How many people?</h3>
                 <div>
-                    <input name="total_people" type="number" value="0" min="0" />
+                    <input name="total_people" type="number" value="1" min="1" />
                 </div>
 
                 <button type="submit" class="ghost-btn mg-top-10">Submit</button>
             </div>
+
+            <div class="selected-destinations-stay-duration" style="display: none;"></div>
         </form>
     </div>
     <div class="clear"></div>

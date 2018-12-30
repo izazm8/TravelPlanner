@@ -4,7 +4,7 @@
 
 {% block content %}
 <div class="sform-container" style="background-image: url({{ url_for('static', filename='images/bg-signup.jpg') }});">
-    <form>
+    <form action="{{ url_for('signup') }}" method="POST">
         <div  align="center">
         <h1 style="color: white">Sign Up</h1>
         <p style="color: white">Please fill in this form to create an account.</p><br>
