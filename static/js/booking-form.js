@@ -40,3 +40,5 @@ $(document).on('input change', 'input.bind-from', function () {
     selectedStayDurations[index] = newValue;
     $($('.bind-to')[index]).val(newValue);
 });
+
+// TODO: Implement real-time updating of cost (and time) using Ajax

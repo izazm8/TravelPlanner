@@ -27,5 +27,14 @@ def get_neighbours(place_id, db_conn):
     return db_conn.execute('SELECT * FROM Neighbours WHERE place_id = {}'.format(place_id))
 
 def get_optimal_path(places):
-    optimal_path = []
-    return optimal_path # not just includes the selected places, but also the ones we have to go through
+    # TODO: Write algo
+    optimal_path = [] # not just includes the selected places, but also the ones we have to go through
+    return optimal_path
+
+def get_path_cost(path):
+    # TODO: Using the neighbours table, calculate total cost
+    return 0
+
+def get_path_travel_time(path):
+    # TODO: Using neighbours table, calculate total travel time
+    return 0

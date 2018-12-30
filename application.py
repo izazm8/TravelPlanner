@@ -34,6 +34,7 @@ def index():
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':
+        # TODO: Implement signup
         return redirect(url_for('dashboard'))
     elif request.method == 'GET':
         return render_template("signup.html")
@@ -41,6 +42,7 @@ def signup():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
+        # TODO: Implement login
         session['user_id'] = '1'
 
         return redirect(url_for('dashboard'))
@@ -64,18 +66,27 @@ def dashboard():
 
 @app.route('/booking', methods=['POST'])
 def booking():
-    return str(request.form)
     # 1. get user input from request.form
     package_id = request.form['package']
     total_people = request.form['total_people']
     destinations = request.form['destinations[]']
+    stay_durations = request.form['stay_durations[]']
 
-    # 2. using MCM, calculate optimal path. Then derive total duration and travel time of that path
+    package_factor = db.execute('SELECT package_factor FROM Packages WHERE package_id = {}'
+                                .format(package_id))[0]['package_factor']
+
+    total_stay_duration = 0
+    for sd in stay_durations:
+        total_stay_duration += sd
+
+    # 2. TODO: Using MCM, calculate optimal path. Then derive total duration and travel time of that path
     optimal_path = get_optimal_path(destinations)
-    #standard_charges = get_path_cost(optimal_path)
-    #total_charges = standard_charges * package_factor
-    #travel_time = get_path_travel_time(optimal_path)
-    #total_duration = travel_time + stay_duration
+
+    standard_charges = get_path_cost(optimal_path)
+    total_charges = standard_charges * package_factor
+
+    travel_time = get_path_travel_time(optimal_path)
+    total_duration = travel_time + total_stay_duration
 
     # 3. store booking data in Bookings table
     x = db.execute('SELECT MAX(booking_id) FROM Bookings')[0]['booking_id']
@@ -88,13 +99,14 @@ def booking():
                .format(booking_id, session.get('user_id'), package_id, datetime.today(), total_people,
                        total_charges, total_duration))
 
-    # 4. store each booking destination and its stay duration in Booking_destinations table
+    # 4. TODO: Store each booking destination and its stay duration in Booking_destinations table
 
     # 5. redirect to booking confirmation page
     return redirect(url_for('booking_confirmed', booking_id=booking_id))
 
 @app.route('/booking-confirmed/<booking_id>', methods=['GET'])
 def booking_confirmed(booking_id):
+    # TODO: Make simple success notification page
     return "You have booked successfully!"
 
 @app.route('/contact', methods=['GET'])
@@ -109,3 +121,16 @@ def about_us():
 def test():
     data = get_neighbours(1, db)
     return str(data)
+
+# APIs #
+@app.route('/get-cost', methods=['POST'])
+def get_cost():
+    destinations = request.form['destinations']
+    optimal_path = get_optimal_path(destinations)
+    return get_path_cost(optimal_path)
+
+@app.route('/get-travel-time', methods=['POST'])
+def get_travel_time():
+    destinations = request.form['destinations']
+    optimal_path = get_optimal_path(destinations)
+    return get_path_travel_time(optimal_path)
