@@ -1,7 +1,7 @@
 from flask import Flask, flash, redirect, request, render_template, session, url_for, abort, jsonify
 from flask_session import Session
 from tempfile import mkdtemp
-from datetime import datetime
+from datetime import date
 
 from cs50 import SQL
 from helpers import *
@@ -69,15 +69,15 @@ def booking():
     # 1. get user input from request.form
     package_id = request.form['package']
     total_people = request.form['total_people']
-    destinations = request.form['destinations[]']
-    stay_durations = request.form['stay_durations[]']
+    destinations = request.form.getlist('destinations[]')
+    stay_durations = request.form.getlist('stay_durations[]')
 
     package_factor = db.execute('SELECT package_factor FROM Packages WHERE package_id = {}'
                                 .format(package_id))[0]['package_factor']
 
     total_stay_duration = 0
     for sd in stay_durations:
-        total_stay_duration += sd
+        total_stay_duration += int(sd)
 
     # 2. TODO: Using MCM, calculate optimal path. Then derive total duration and travel time of that path
     optimal_path = get_optimal_path(destinations)
@@ -89,17 +89,21 @@ def booking():
     total_duration = travel_time + total_stay_duration
 
     # 3. store booking data in Bookings table
-    x = db.execute('SELECT MAX(booking_id) FROM Bookings')[0]['booking_id']
+    x = db.execute('SELECT MAX(booking_id) as last_insert_id FROM Bookings')[0]['last_insert_id']
     last_booking_id = 0 if x is None else x
     booking_id = last_booking_id + 1
 
-    db.execute('INSERT INTO Bookings (booking_id, user_id, package_id, booking_date, booking_total_people,'
-               'booking_total_charges, booking_total_duration)'
-               'VALUES ({}, {}, {}, {}, {}, {}, {})'
-               .format(booking_id, session.get('user_id'), package_id, datetime.today(), total_people,
+    db.execute('INSERT INTO Bookings (booking_id, user_id, package_id, booking_date, booking_total_people, '
+               'booking_total_charges, booking_total_duration) '
+               'VALUES ({}, {}, {}, TO_DATE(\'{}\', \'yyyy-mm-dd\'), {}, {}, {})'
+               .format(booking_id, session.get('user_id'), package_id, date.today(), total_people,
                        total_charges, total_duration))
 
-    # 4. TODO: Store each booking destination and its stay duration in Booking_destinations table
+    # 4. Store each booking destination and its stay duration in Booking_destinations table
+    for i in range(len(destinations)):
+        db.execute('INSERT INTO Booking_destinations (booking_id, place_id, bd_stay_duration)'
+                   'VALUES ({}, {}, {})'
+                   .format(booking_id, destinations[i], stay_durations[i]))
 
     # 5. redirect to booking confirmation page
     return redirect(url_for('booking_confirmed', booking_id=booking_id))

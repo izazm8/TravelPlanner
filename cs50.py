@@ -136,6 +136,8 @@ class SQL(object):
                 if self.engine.url.get_backend_name() in ["postgres", "postgresql"]:
                     result = self.engine.execute(sqlalchemy.text("SELECT LASTVAL()"))
                     return result.first()[0]
+                elif self.engine.url.get_backend_name() in ["oracle"]:
+                    return 1
                 else:
                     return result.lastrowid
 

@@ -42,7 +42,7 @@
                 <div>
                     <select name="package">
                         {% for package in packages %}
-                        <option>{{ package.package_name }}</option>
+                        <option value="{{ package.package_id }}">{{ package.package_name }}</option>
                         {% endfor %}
                     </select>
                 </div>
