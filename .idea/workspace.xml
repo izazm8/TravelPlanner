@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28be2533-f9b3-498d-bdf3-283673c18cc2" name="Default Changelist" comment="initialized">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/af14b7d7-d359-4e6a-a259-cdae31e3e5d7.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/af14b7d7-d359-4e6a-a259-cdae31e3e5d7.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/af14b7d7-d359-4e6a-a259-cdae31e3e5d7/storage_v2/_src_/schema/TRAVEL_PLANNER.jc208Q.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/af14b7d7-d359-4e6a-a259-cdae31e3e5d7/storage_v2/_src_/schema/TRAVEL_PLANNER.jc208Q.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/helpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/helpers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/schema/schema.txt" beforeDir="false" afterPath="$PROJECT_DIR$/schema/schema.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/booking-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/booking-form.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashboard.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/venv/pip-selfcheck.json" beforeDir="false" afterPath="$PROJECT_DIR$/venv/pip-selfcheck.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -64,10 +61,11 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="Python Console" value="41" />
           <entry key="css" value="1162" />
-          <entry key="html" value="5097" />
-          <entry key="js" value="2112" />
-          <entry key="py" value="5846" />
+          <entry key="html" value="5181" />
+          <entry key="js" value="2663" />
+          <entry key="py" value="8089" />
           <entry key="sql" value="28" />
           <entry key="txt" value="1675" />
         </counts>
@@ -75,10 +73,10 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="1162" />
-          <entry key="HTML" value="5097" />
-          <entry key="JavaScript" value="2112" />
+          <entry key="HTML" value="5181" />
+          <entry key="JavaScript" value="2663" />
           <entry key="PLAIN_TEXT" value="1675" />
-          <entry key="Python" value="5846" />
+          <entry key="Python" value="8130" />
           <entry key="Scratch" value="28" />
         </counts>
       </usages-collector>
@@ -87,7 +85,7 @@
           <entry key="BOOKINGS" value="1" />
           <entry key="DEMO_USERS" value="1" />
           <entry key="css" value="3" />
-          <entry key="html" value="14" />
+          <entry key="html" value="16" />
           <entry key="js" value="2" />
           <entry key="py" value="10" />
           <entry key="sql" value="6" />
@@ -98,7 +96,7 @@
         <counts>
           <entry key="CSS" value="3" />
           <entry key="Database Element" value="2" />
-          <entry key="HTML" value="14" />
+          <entry key="HTML" value="16" />
           <entry key="JavaScript" value="2" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Python" value="10" />
@@ -112,55 +110,47 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
+            <state relative-caret-position="208">
+              <caret line="168" column="27" selection-start-line="168" selection-start-column="27" selection-end-line="168" selection-end-column="27" />
               <folding>
                 <element signature="e#0#100#0" expanded="true" />
-                <marker date="1546187316385" expanded="true" signature="402:403" ph="..." />
-                <marker date="1546187316385" expanded="true" signature="402:407" ph="..." />
-                <marker date="1546187316385" expanded="true" signature="5115:5210" ph="..." />
-                <marker date="1546187316385" expanded="true" signature="5567:5572" ph="..." />
-                <marker date="1546187316385" expanded="true" signature="5777:5922" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/helpers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
-              <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-                <marker date="1546185961438" expanded="true" signature="1094:1099" ph="..." />
-                <marker date="1546185961438" expanded="true" signature="1201:1266" ph="..." />
-                <marker date="1546185961438" expanded="true" signature="1201:1270" ph="..." />
-                <marker date="1546185961438" expanded="true" signature="1327:1332" ph="..." />
+                <marker date="1546207896847" expanded="true" signature="402:403" ph="..." />
+                <marker date="1546207896847" expanded="true" signature="402:407" ph="..." />
+                <marker date="1546207896847" expanded="true" signature="5623:5718" ph="..." />
+                <marker date="1546207896847" expanded="true" signature="6083:6088" ph="..." />
+                <marker date="1546207896847" expanded="true" signature="6363:6522" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/signup.html">
+        <entry file="file://$PROJECT_DIR$/helpers.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+            <state relative-caret-position="241">
+              <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
               <folding>
-                <element signature="n#style#0;n#label#0;n#p#6;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#0#21#0" expanded="true" />
+                <marker date="1546208642466" expanded="true" signature="1562:1567" ph="..." />
+                <marker date="1546208642466" expanded="true" signature="1889:1954" ph="..." />
+                <marker date="1546208642466" expanded="true" signature="1889:1958" ph="..." />
+                <marker date="1546208642466" expanded="true" signature="2015:2020" ph="..." />
+                <marker date="1546208642466" expanded="true" signature="2250:2496" ph="..." />
+                <marker date="1546208642466" expanded="true" signature="2539:2906" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cs50.py">
+        <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="497">
-              <caret line="153" selection-start-line="153" selection-end-line="153" />
+            <state relative-caret-position="242">
+              <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -181,8 +171,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/js/booking-form.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+            <state relative-caret-position="204">
+              <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -213,16 +203,16 @@
         <option value="$PROJECT_DIR$/static/js/main.js" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/schema.txt" />
-        <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/static/css/main.css" />
-        <option value="$PROJECT_DIR$/static/js/booking-form.js" />
-        <option value="$PROJECT_DIR$/templates/dashboard.html" />
         <option value="$PROJECT_DIR$/cs50.py" />
-        <option value="$PROJECT_DIR$/helpers.py" />
         <option value="$PROJECT_DIR$/schema/schema.txt" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/application.py" />
+        <option value="$PROJECT_DIR$/templates/login.html" />
         <option value="$PROJECT_DIR$/templates/signup.html" />
+        <option value="$PROJECT_DIR$/templates/dashboard.html" />
+        <option value="$PROJECT_DIR$/static/js/booking-form.js" />
+        <option value="$PROJECT_DIR$/application.py" />
+        <option value="$PROJECT_DIR$/helpers.py" />
       </list>
     </option>
   </component>
@@ -319,32 +309,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.30408472" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.3295082" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3295082" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.3295082" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49924356" visible="true" weight="0.3295082" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.3295082" />
-      <window_info anchor="bottom" id="Database Console" order="13" weight="0.3295082" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" weight="0.32980332" />
-      <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
-    </layout>
-    <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30408472" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -359,7 +324,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" weight="0.3295082" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50075644" side_tool="true" weight="0.3295082" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49924356" weight="0.3295082" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49924356" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.3295082" />
       <window_info anchor="bottom" id="Database Console" order="13" weight="0.3295082" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -367,7 +332,7 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32980332" />
       <window_info anchor="right" id="Database" order="4" weight="0.32980332" />
-    </layout-to-restore>
+    </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -438,13 +403,6 @@
     <entry file="file://$PROJECT_DIR$/scheme/schema.txt">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="6" column="54" selection-start-line="6" selection-start-column="54" selection-end-line="6" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/af14b7d7-d359-4e6a-a259-cdae31e3e5d7/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -452,25 +410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="44" column="60" selection-start-line="44" selection-start-column="60" selection-end-line="44" selection-end-column="60" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/js/booking-form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -496,20 +435,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="44" column="26" selection-start-line="44" selection-start-column="26" selection-end-line="44" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#21#0" expanded="true" />
-            <marker date="1546185961438" expanded="true" signature="1094:1099" ph="..." />
-            <marker date="1546185961438" expanded="true" signature="1201:1266" ph="..." />
-            <marker date="1546185961438" expanded="true" signature="1201:1270" ph="..." />
-            <marker date="1546185961438" expanded="true" signature="1327:1332" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/schema/schema.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -524,27 +449,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application.py">
+    <entry file="file://$PROJECT_DIR$/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="53" column="50" selection-start-line="53" selection-start-column="50" selection-end-line="53" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#100#0" expanded="true" />
-            <marker date="1546187316385" expanded="true" signature="402:403" ph="..." />
-            <marker date="1546187316385" expanded="true" signature="402:407" ph="..." />
-            <marker date="1546187316385" expanded="true" signature="5115:5210" ph="..." />
-            <marker date="1546187316385" expanded="true" signature="5567:5572" ph="..." />
-            <marker date="1546187316385" expanded="true" signature="5777:5922" ph="..." />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="15" column="73" selection-start-line="15" selection-start-column="73" selection-end-line="15" selection-end-column="73" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/signup.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="27" column="29" selection-start-line="27" selection-start-column="29" selection-end-line="27" selection-end-column="29" />
+        <state relative-caret-position="197">
+          <caret line="24" column="84" selection-start-line="24" selection-start-column="84" selection-end-line="24" selection-end-column="84" />
           <folding>
             <element signature="n#style#0;n#label#0;n#p#6;n#div#0;n#form#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/js/booking-form.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="26" column="40" selection-start-line="26" selection-start-column="40" selection-end-line="26" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="168" column="27" selection-start-line="168" selection-start-column="27" selection-end-line="168" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#100#0" expanded="true" />
+            <marker date="1546207896847" expanded="true" signature="402:403" ph="..." />
+            <marker date="1546207896847" expanded="true" signature="402:407" ph="..." />
+            <marker date="1546207896847" expanded="true" signature="5623:5718" ph="..." />
+            <marker date="1546207896847" expanded="true" signature="6083:6088" ph="..." />
+            <marker date="1546207896847" expanded="true" signature="6363:6522" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#form#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="241">
+          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1546208642466" expanded="true" signature="1562:1567" ph="..." />
+            <marker date="1546208642466" expanded="true" signature="1889:1954" ph="..." />
+            <marker date="1546208642466" expanded="true" signature="1889:1958" ph="..." />
+            <marker date="1546208642466" expanded="true" signature="2015:2020" ph="..." />
+            <marker date="1546208642466" expanded="true" signature="2250:2496" ph="..." />
+            <marker date="1546208642466" expanded="true" signature="2539:2906" ph="..." />
           </folding>
         </state>
       </provider>

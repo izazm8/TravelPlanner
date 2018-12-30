@@ -66,11 +66,23 @@ def signup():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        # TODO: Implement login
-        session['user_id'] = '1'
+        email = request.form['email']
+        passwd = request.form['password']
+
+        user_data = db.execute('SELECT * FROM Users WHERE user_email = \'{}\''.format(email))[0]
+        hashed_passwd = user_data['user_password']
+
+        if not bcrypt.verify(passwd, hashed_passwd):
+            return redirect(url_for('login'))
+
+        session['user_id'] = user_data['user_id']
+        session['first_name'] = user_data['user_first_name']
+        session['last_name'] = ['user_last_name']
+        session['email'] = email
 
         return redirect(url_for('dashboard'))
     elif request.method == 'GET':
+        session['user_id'] = '1'
         return render_template("login.html")
 
 @app.route('/logout', methods=['GET'])
@@ -104,7 +116,7 @@ def booking():
         total_stay_duration += int(sd)
 
     # 2. TODO: Using MCM, calculate optimal path. Then derive total duration and travel time of that path
-    optimal_path = get_optimal_path(destinations)
+    optimal_path = get_optimal_path(destinations, db)
 
     standard_charges = get_path_cost(optimal_path)
     total_charges = standard_charges * package_factor
@@ -146,18 +158,19 @@ def about_us():
 
 @app.route('/test')
 def test():
-    data = get_neighbours(1, db)
+    data = get_optimal_path([1, 14], db)
     return str(data)
 
 # APIs #
 @app.route('/get-cost', methods=['POST'])
 def get_cost():
-    destinations = request.form['destinations']
-    optimal_path = get_optimal_path(destinations)
-    return get_path_cost(optimal_path)
+    destinations = [int(x) for x in request.form.getlist('destinations[]')]
+    optimal_path = get_optimal_path(destinations, db)
+    return str(optimal_path)
+    return str(get_path_cost(optimal_path, db))
 
 @app.route('/get-travel-time', methods=['POST'])
 def get_travel_time():
-    destinations = request.form['destinations']
-    optimal_path = get_optimal_path(destinations)
+    destinations = request.form.getlist('destinations[]')
+    optimal_path = get_optimal_path(destinations, db)
     return get_path_travel_time(optimal_path)

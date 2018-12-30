@@ -11,7 +11,7 @@ $('input[name="destinations[]"]').on('change', function () {
         selectedStayDurations.splice(index, 1);
     }
 
-    // update UI
+    /* Update UI */
     // clears the UI, so it is easy to maintain order
     $('.selected-destinations').html('');
     $('.selected-destinations-stay-duration').html('');
@@ -19,6 +19,12 @@ $('input[name="destinations[]"]').on('change', function () {
     selected.forEach(function (value, index) {
         $('.selected-destinations').append('<tr><td>' + $(value).next().html() + '</td><td><input class="bind-from" type="number" value="' + selectedStayDurations[index] + '" min="0" /></td></tr>');
         $('.selected-destinations-stay-duration').append('<input class="bind-to" type="number" value="' + selectedStayDurations[index] + '" min="0" name="stay_durations[]" />')
+    });
+
+    // update total cost and travel time
+    $.post('http://localhost:5000/get-cost', {destinations: get_values(selected)}, function (response) {
+        console.log(response)
+        $('.total-cost').html(response);
     });
 });
 
@@ -41,4 +47,12 @@ $(document).on('input change', 'input.bind-from', function () {
     $($('.bind-to')[index]).val(newValue);
 });
 
-// TODO: Implement real-time updating of cost (and time) using Ajax
+function get_values(arr) {
+    var values = [];
+
+    arr.forEach(function (val, index) {
+       values.push($(val).val());
+    });
+
+    return values;
+}
